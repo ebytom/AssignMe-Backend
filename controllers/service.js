@@ -3,8 +3,8 @@ const serviceModel = require('../models/service-model')
 
 module.exports.postProjectRequest = async (req, res) => {
     try {
-        const { addedBy, requestType, appName, keyFunction, requirements, offer, uploadFileName } = req.body;
-        if (!(addedBy && requestType && appName && keyFunction && requirements && offer)) return res.status(500).json({
+        const { addedBy, requestType, appName, keyFunction, requirements, whatsapp, offer, uploadFileName } = req.body;
+        if (!(addedBy && requestType && appName && keyFunction && requirements && whatsapp && offer)) return res.status(500).json({
             error: "Missing some input field",
             msg: "error"
         })
@@ -17,6 +17,7 @@ module.exports.postProjectRequest = async (req, res) => {
             appName: appName,
             keyFunction: keyFunction,
             requirements: requirements,
+            whatsapp: whatsapp,
             offer: offer,
             uploadedFileName: uploadFileName,
             accepted: {

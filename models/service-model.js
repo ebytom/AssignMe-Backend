@@ -26,6 +26,10 @@ const ServiceSchema = new mongoose.Schema({
     requirements: {
         type: String,
     },
+    whatsapp: {
+        type: Number,
+        required: true
+    },
     offer: {
         type: Number,
         required: true,
