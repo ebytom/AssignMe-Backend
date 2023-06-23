@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "bin": "cli.js",
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./index.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",

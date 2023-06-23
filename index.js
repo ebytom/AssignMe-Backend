@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 // Module dependencies.
-const app = require('../app');
+const app = require('./app');
 const debug = require('debug')('nalaso-express:server');
 const http = require('http');
-const { connectDB } = require('../database/connection');
+const { connectDB } = require('./database/connection');
 const dotenv = require("dotenv")
 dotenv.config()
 
