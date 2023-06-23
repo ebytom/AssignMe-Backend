@@ -22,7 +22,7 @@ const app = express();
 
 // middlewares
 app.use(cors({
-    // origin: ['http://localhost:3000', 'http://localhost:3001'],
+    origin: ['https://assign-me-frontend.vercel.app/'],
     methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'],
     maxAge: 10000,
 }))
