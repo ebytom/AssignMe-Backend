@@ -33,7 +33,6 @@ app.use('/api/v1/app/auth', authRouter);
 app.use('/api/v1/app/users', isAuthenticated, usersRouter);
 app.use('/api/v1/admin', isAdmin, adminRouter);
 app.use('/api/v1/service', serviceRouter);
-app.use('/', indexRouter);
 
 
 
@@ -60,6 +59,8 @@ app.get('/downloadFile', function (req, res) {
     const file = `${__dirname}/public/resources/${fileName}`;
     res.download(file); // Set disposition and send it.
 });
+
+app.use('/', indexRouter);
 
 // error handler
 app.use(error)
