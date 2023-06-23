@@ -35,8 +35,7 @@ app.use('/api/v1/admin', isAdmin, adminRouter);
 app.use('/api/v1/service', serviceRouter);
 app.use('/', indexRouter);
 
-// error handler
-app.use(error)
+
 
 const multer = require('multer')
 
@@ -61,5 +60,8 @@ app.get('/downloadFile', function (req, res) {
     const file = `${__dirname}/public/resources/${fileName}`;
     res.download(file); // Set disposition and send it.
 });
+
+// error handler
+app.use(error)
 
 module.exports = app;
