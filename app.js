@@ -21,10 +21,7 @@ const serviceRouter = require('./routes/service')
 const app = express();
 
 // middlewares
-app.use(cors({
-    methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'],
-    maxAge: 10000,
-}))
+app.use(cors())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
