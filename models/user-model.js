@@ -13,12 +13,16 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please provide a name"],
     },
+    isAdmin: {
+        type: Boolean,
+        required: true
+    },
     createdAt: {
-        localString:{
+        localString: {
             type: String,
             // required:true
         },
-        timestamp:{
+        timestamp: {
             type: Number,
             // required:true
         }

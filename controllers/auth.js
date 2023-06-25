@@ -61,6 +61,7 @@ module.exports.signUp = async (req, res, next) => {
         email: email,
         password: hashedPassword,
         name: name,
+        isAdmin: false,
         createdAt: {
             string: date.toLocaleString(),
             timestamp: date.getTime()
