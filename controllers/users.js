@@ -9,10 +9,10 @@ module.exports.getMyProfile = catchAsyncError(async (req, res, next) => {
         return next(new ErrorHandler("Application id not valid", 400));
     }
 
-    var user = await userModel.findOne({ 
-        email: email 
+    var user = await userModel.findOne({
+        email: email
     });
-    
+
     delete user.password;
 
     res.json({
@@ -21,3 +21,4 @@ module.exports.getMyProfile = catchAsyncError(async (req, res, next) => {
         user: user,
     });
 });
+

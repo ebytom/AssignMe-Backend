@@ -1,5 +1,7 @@
 const { request } = require('../app');
-const serviceModel = require('../models/service-model')
+const { catchAsyncError } = require('../middleware/catchAsyncError');
+const serviceModel = require('../models/service-model');
+const userModel = require('../models/user-model');
 
 module.exports.postProjectRequest = async (req, res) => {
     try {
@@ -302,3 +304,19 @@ module.exports.deleteRequestById = async (req, res) => {
         });
     }
 }
+
+
+
+
+
+
+module.exports.getUsers = catchAsyncError(async (req, res, next) => {
+    var users = await userModel.find();
+
+
+    res.json({
+        code: 200,
+        message: 'Profile found',
+        users: users,
+    });
+});
